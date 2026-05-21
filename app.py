@@ -79,7 +79,7 @@ class Disaster(ABC):
 
 class Heatwave(Disaster):
     def __init__(self):
-        super().__init__("폭염", 100, 3, 3, "폭염.png")
+        super().__init__("폭염", 100, 3, 3, "https://imgur.com/ehvEBYh")
         self.add_policy(Policy("폭염 쉼터와 냉방 지원 확대", 3, 100, 3, -4, "폭염 쉼터 확대로 시민을 보호했으나 전력 과소비로 환경지수가 하락함."))
         self.add_policy(Policy("야외 노동 전면 중단", 2, 150, -6, 0, "야외 노동 중단으로 생명을 구했으나 경제 활동 위축으로 신뢰도가 하락함."))
         self.add_policy(Policy("친환경 냉방 인프라 투자", 5, 40, -2, 6, "친환경 냉방 투자로 환경을 개선했으나 즉각적 구호가 부족했음."))
@@ -87,7 +87,7 @@ class Heatwave(Disaster):
 
 class Typhoon(Disaster):
     def __init__(self):
-        super().__init__("태풍", 160, 5, 4, "태풍.png")
+        super().__init__("태풍", 160, 5, 4, "https://imgur.com/lF7anch")
         self.add_policy(Policy("외출 금지", 3, 180, 3, 0, "외출 금지로 생명을 구하고 신뢰가 상승함."))
         self.add_policy(Policy("방재 예산 투입", 5, 140, -3, 6, "방재 예산 투입으로 환경 피해를 줄였으나 예산 논란이 일었음."))
         self.add_policy(Policy("일회용 구호물품 배포", 4, 200, 6, -8, "구호물품 배포로 생존율은 올랐으나 쓰레기 증가로 환경지수가 악화됨."))
@@ -96,7 +96,7 @@ class Typhoon(Disaster):
 
 class HeavyRain(Disaster):
     def __init__(self):
-        super().__init__("폭우/침수", 200, 6, 5, "폭우.png") 
+        super().__init__("폭우/침수", 200, 6, 5, "https://imgur.com/0LwiVMw") 
         self.add_policy(Policy("저지대 대피", 3, 220, -2, 0, "선제 대피로 인명피해를 막았으나 강제 이주 불만이 발생함."))
         self.add_policy(Policy("임시 배수로 건설", 5, 180, 3, -6, "배수로로 침수를 막았으나 자연 훼손으로 환경지수가 감소함."))
         self.add_policy(Policy("자연배수 유도", 5, -120, -5, 10, "자연배수를 유도하여 환경지수는 지켰으나 희생자가 발생함."))
@@ -112,7 +112,7 @@ class LivestockCrisis(Disaster):
 
 class Pandemic(Disaster):
     def __init__(self):
-        super().__init__("전염병", 300, 10, 2, "팬데믹.png")
+        super().__init__("전염병", 300, 10, 2, "https://imgur.com/QNbzva5")
         self.add_policy(Policy("감염지역 봉쇄", 5, 320, -12, 0, "강력한 봉쇄로 생명은 구했지만 신뢰가 폭락함."))
         self.add_policy(Policy("원격근무/디지털 전환", 6, 200, -4, 10, "디지털 전환으로 탄소배출이 감소했으나 현장의 반발을 삼."))
         self.add_policy(Policy("방역 물질 살포", 6, 260, 5, -8, "대규모 화학 방역으로 바이러스를 잡았지만 생태계가 파괴됨."))
@@ -187,7 +187,7 @@ class GameManager:
             self.player.env += self.pending_diff['env']
 
             if self.player.pop <= 0 or self.player.trust <= 0 or self.player.env <= 0:
-                self._set_ending("게임 오버 엔딩.png", "모든 것이 무너졌습니다.")
+                self._set_ending("https://imgur.com/QhTvoQf", "모든 것이 무너졌습니다.")
                 return
 
             self.last_report = {
@@ -203,12 +203,12 @@ class GameManager:
         self.player.trust += bonus
         pop, trust, env = self.player.pop, self.player.trust, self.player.env
         
-        if pop <= 1200: self._set_ending("국가 붕괴 엔딩.png", "국가의 기능이 완전히 무너졌습니다.")
-        elif env <= 15: self._set_ending("환경 붕괴 엔딩.png", "자연의 경고를 무시한 대가는 참혹했습니다.")
-        elif trust < 20 and env >= 35: self._set_ending("독재 국가 엔딩.png", "자유를 희생하여 환경을 지켜냈습니다.")
-        elif pop >= 3800 and trust >= 65 and env >= 70: self._set_ending("지속가능 국가 엔딩.png", "당신의 선택이 더 나은 미래를 만들었습니다.")
-        elif pop >= 2800 and env >= 35: self._set_ending("생존 국가 엔딩.png", "수많은 위기 속에서도 국가를 지켜냈습니다.")
-        else: self._set_ending("게임 오버 엔딩.png", "미래를 바꾸지 못했습니다.")
+        if pop <= 1200: self._set_ending("https://imgur.com/h9wgYzY", "국가의 기능이 완전히 무너졌습니다.")
+        elif env <= 15: self._set_ending("https://imgur.com/qqU3S6m", "자연의 경고를 무시한 대가는 참혹했습니다.")
+        elif trust < 20 and env >= 35: self._set_ending("https://imgur.com/XsfM5Jd", "자유를 희생하여 환경을 지켜냈습니다.")
+        elif pop >= 3800 and trust >= 65 and env >= 70: self._set_ending("https://imgur.com/DQcQXAr", "당신의 선택이 더 나은 미래를 만들었습니다.")
+        elif pop >= 2800 and env >= 35: self._set_ending("https://imgur.com/kB4mUEl", "수많은 위기 속에서도 국가를 지켜냈습니다.")
+        else: self._set_ending("https://imgur.com/QhTvoQf", "미래를 바꾸지 못했습니다.")
 
     def _set_ending(self, img, title):
         self.state = "ENDING"
@@ -336,7 +336,7 @@ HTML_TEMPLATE = """
         </div>
 
         <div id="title-screen" style="position: absolute; width: 100%; height: 100%; z-index: 50; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <img src="/assets/타이틀 화면.png" class="bg-image" onerror="this.style.display='none'">
+            <img src="/assets/https://imgur.com/j9YJQ66" class="bg-image" onerror="this.style.display='none'">
             <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 350px; z-index: 51;">
                 <button onclick="startGame()" style="padding: 15px 50px; font-size: 30px; background: #d35400; color: white; border: 4px solid #fff; border-radius: 10px; cursor: pointer; font-family: inherit;">게임 시작</button>
                 <button onclick="document.getElementById('manual-popup').style.display='block'" style="padding: 15px 50px; font-size: 30px; background: #2c3e50; color: white; border: 4px solid #fff; border-radius: 10px; cursor: pointer; font-family: inherit;">게임 설명</button>
@@ -372,9 +372,9 @@ HTML_TEMPLATE = """
 
         <div class="policy-overlay" id="policy-overlay">
             <div class="policy-paper-container">
-                <img src="/assets/정책 제안서.png" class="policy-bg" onerror="this.src=''">
+                <img src="/assets/https://imgur.com/edkYA6q" class="policy-bg" onerror="this.src=''">
                 <div id="policy-list"></div>
-                <img src="/assets/승인도.png" class="stamp" id="stamp-img" onerror="this.src=''">
+                <img src="/assets/https://imgur.com/cc86B2v" class="stamp" id="stamp-img" onerror="this.src=''">
             </div>
             <div style="position: absolute; top: 30px; right: 40px; color: white; font-size: 50px; cursor: pointer;" onclick="document.getElementById('policy-overlay').style.display='none'">✖</div>
             <button class="skip-btn" style="position: absolute; bottom: 40px; right: 40px; background: #e74c3c; border-color: #c0392b; z-index: 40;" onclick="document.getElementById('policy-overlay').style.display='none'">뒤로 가기</button>
@@ -489,7 +489,7 @@ HTML_TEMPLATE = """
             setTimeout(() => takeAction('POLICY', idx), 600);
         }
 
-        function openOffice() { document.getElementById('main-bg').src = '/assets/집무실.png'; document.getElementById('office-click-layer').style.display = 'block'; document.getElementById('office-btn').style.display = 'none'; }
+        function openOffice() { document.getElementById('main-bg').src = '/assets/https://imgur.com/vrD8wYD'; document.getElementById('office-click-layer').style.display = 'block'; document.getElementById('office-btn').style.display = 'none'; }
         function closeOffice() { fetchState(); }
         function openPolicy() { document.getElementById('policy-overlay').style.display = 'flex'; }
         function toggleNews() { const b = document.getElementById('news-box'); b.style.display = b.style.display === 'block' ? 'none' : 'block'; }

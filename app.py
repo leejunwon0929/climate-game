@@ -104,7 +104,7 @@ class HeavyRain(Disaster):
 
 class LivestockCrisis(Disaster):
     def __init__(self):
-        super().__init__("가축위기", 220, 8, 3, "가축 위기.png")
+        super().__init__("가축위기", 220, 8, 3, "https://imgur.com/fspCBFS")
         self.add_policy(Policy("식량 배급", 6, 260, 8, -2, "식량 배급으로 민심을 다독임."))
         self.add_policy(Policy("대체식량 연구/생산", 7, 60, -5, 12, "미래 식량 연구로 환경을 개선했으나 당장의 식량난으로 불만이 커짐."))
         self.add_policy(Policy("감염 가축 소각", 3, 0, -6, -10, "감염 가축을 전면 소각하여 팬데믹의 연결 고리를 끊어냄."))
